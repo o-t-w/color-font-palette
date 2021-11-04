@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Palette Color Font Demo</title>
+
+    <style>
+        @font-face {
+  font-family: 'color';
+  src: url('NewFont-Regular.woff2') format('woff2');
+}
+
+        @font-palette-values --Red {
+    font-family: color;
+    base-palette: 1;
+    override-colors:
+        1 #DB4437;
+}
+
+.color {
+    font-family: 'color';
+    font-size: 150px;
+    letter-spacing: -10px;
+    margin-block: 24px;
+    text-align: center;
+}
+
+.red-palette {
+  font-palette: --Red;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+    </style>
+</head>
+<body>
+    <h2 class="color">NOW</h2>
+    <h2 class="color red-palette">NOW</h2>
+</body>
+</html>
