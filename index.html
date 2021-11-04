@@ -21,33 +21,57 @@
   src: url('NewFont-Regular.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'bungee';
+    src: url('BungeeColor-Regular_colr.ttf')  format('truetype');
+}
+
         @font-palette-values --Red {
-    font-family: color;
+    font-family: bungee;
     base-palette: 0;
     override-colors:
         0 lch(56% 132 17),
-        1 lch(16% 132 17);
+        1 lch(76% 132 159.026);
 }
 
 @font-palette-values --Lab {
-    font-family: color;
+    font-family: bungee;
     base-palette: 0;
     override-colors:
         0 lch(76% 132 159.026),
-        1 lch(2% 132 178.591);
+        1 lch(93% 132 94);
+}
+
+@font-palette-values --Purple {
+    font-family: bungee;
+    base-palette: 0;
+    override-colors:
+        0 rgb(92% 93% 96%),
+        1 lch(59% 132 0);
 }
 
 body {
     font-family: ui-rounded, system-ui, sans-serif;
     margin: 0;
+    background-color: black;
+    color: white;
+}
+
+a, a:visited {
+    color: white;
 }
 
 .color {
-    font-family: 'color';
+    font-family: 'bungee';
     font-size: 150px;
-    letter-spacing: -10px;
+    letter-spacing: -5px;
     margin-block: 0;
     text-align: center;
+  
+}
+
+.purple-palette {
+    font-palette: --Purple;
 }
 
 .red-palette {
@@ -58,18 +82,38 @@ body {
   font-palette: --Lab;
 }
 
+.upright {
+    writing-mode: vertical-rl;
+     text-orientation: upright;
+}
+
 body {
     display: grid;
     place-items: center;
     align-content: center;
     min-height: 100vh;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: center;
+    align-items: center;
+    column-gap: 42px;
+}
+
+h2 {
+    line-height: 1;
+}
     </style>
 </head>
 <body>
-    <h2 class="color">NOW</h2>
-    <h2 class="color red-palette">NOW</h2>
-    <h2 class="color lab-palette">NOW</h2>
+   <div class="grid">
+    <div> <h2 class="color purple-palette">Color</h2>
+        <h2 class="color red-palette">Fonts</h2>
+    </div>
+        <h2 class="color lab-palette upright">NOW</h2>
+   </div>
 
     <p>Code available on <a href="https://github.com/o-t-w/color-font-palette">GitHub</a></p>
 </body>
