@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: pink;
+            margin: 0;
+        }
+        * {
+    color: var(--text-color);
+}
+
+.light, .dark {
+    background-color:var(--background-color);
+}
+
+@font-palette-values --Contextual {
+    font-family: bungee;
+    base-palette: 0;
+    override-colors:
+        0 var(--text-color),
+        1 var(--background-color);
+}
+
+.light {
+   color: black;
+    --background-color: white;
+}
+
+.dark {
+    color: white;
+    --background-color: black;
+}
+    </style>
+</head>
+<body>
+    <div class="light">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates nulla sint vel deleniti at repudiandae possimus similique fugit eligendi voluptatem laborum cum maxime explicabo impedit autem omnis tempore veniam ratione, distinctio suscipit rem unde deserunt blanditiis obcaecati? Assumenda, rem deserunt.</p>
+    </div>
+
+    <div style="padding: 24px;" class="dark">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, neque.</p>
+
+       <div style="padding: 8px;" class="light">
+        <p style="margin: 24px;" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quibusdam sunt ea ullam dicta, distinctio id quia esse illum corrupti?</p>
+
+        <p style="padding: 8px;" class="dark">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam non esse maiores necessitatibus voluptates eius odit explicabo asperiores nemo quaerat.</p>
+       </div>
+    </div>
+</body>
+</html>
