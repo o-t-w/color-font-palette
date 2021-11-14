@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: 'Rocher';
-    src: url('RocherColorGX.woff2')  format('woff2-variations');
+    src: url('RocherColorGX.woff2') format('woff2-variations');
 }
 
 @font-palette-values --Red {
@@ -56,7 +56,16 @@
        font-palette: --Red;
        font-palette: --Blues;
        font-size: 100px;
+       color: #316ea3;
     }
+
+    @font-palette-values --TransitionFrom {
+    font-family: bungee;
+    base-palette: 0;
+    override-colors:
+        0 black,
+        1 #74F87B;
+}
 
         @font-palette-values --Red {
     font-family: bungee;
@@ -128,6 +137,7 @@ a, a:visited {
     min-height: 100vh;;
     column-gap: 42px;
     background-color: black;
+    color: white;
 }
 
 h2 {
@@ -149,6 +159,18 @@ h2 {
 }
 
 @font-face {
+    font-family: 'noto';
+    src: url('noto-glyf_colr_1.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+.noto {
+    font-family: 'noto';
+    font-size: 120px;
+}
+
+@font-face {
     font-family: 'twemoji';
     src: url('TwemojiMozilla.ttf')  format('truetype');
 }
@@ -157,14 +179,17 @@ h2 {
     font-family: twemoji;
     base-palette: 0;
     override-colors:
-        0 lch(56% 132 17),
-        1 lch(76% 132 159.026),
-        2 lch(76% 132 159.026),
-        3 lch(93% 132 94),
-        4 lch(76% 132 159.026),
-        5 lch(76% 132 159.026),
-        6  lch(76% 132 159.026),
-        7 lch(76% 132 159.026);
+    0 lch(76% 132 159),
+    1 lch(76% 132 159),
+    2 lch(76% 132 159),
+    3 lch(76% 132 159),
+    4 lch(76% 132 159),
+    5 lch(76% 132 159),
+    6 lch(76% 132 159),
+    7 lch(76% 132 159),
+    8 lch(76% 132 159),
+    9 lch(76% 132 159),
+    10 lch(76% 132 159);
 }
 
 .emoji {
@@ -186,6 +211,114 @@ h2 {
 .pinks {
     font-palette: --Pinks;
 }
+
+@font-face {
+    font-family: 'reem';
+    src: url('ReemKufiInk-Regular.ttf') format('truetype');
+}
+
+@font-palette-values --Cats {
+    font-family: Catmoji;
+    base-palette: 0;
+    override-colors:
+    0 lch(76% 132 159),
+    1 lch(76% 132 159),
+    2 lch(76% 132 159),
+    3 lch(76% 132 159),
+    4 lch(76% 132 159),
+    5 lch(76% 132 159),
+    6 lch(76% 132 159),
+    7 lch(76% 132 159),
+    8 lch(76% 132 159),
+    9 lch(76% 132 159),
+    10 lch(76% 132 159);
+}
+
+@font-face {
+    font-family: 'Catmoji';
+    src: url('Catmoji2.ttf') format('truetype');
+}
+
+.catmoji {
+    font-family: 'Catmoji';
+    font-size: 100px;
+    font-palette: --Cats;
+}
+
+@font-face {
+    font-family: 'Mibster';
+    src: url('GimmeMibsterTEST-Color.otf') format('opentype-variations');
+}
+
+@font-palette-values --Multi {
+    font-family: Mibster;
+    base-palette: 0;
+    override-colors:
+    0 lch(12% 132 332),
+    1 lch(19% 132 332),
+    2 lch(30% 132 332),
+    3 lch(93% 132 324);
+}
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 0;
+    override-colors: 
+    0 #738391,
+    1 #ACB6C0,
+    2 #ACB6C0,
+    3 #DEE1E6;
+}
+
+.grays {
+    font-palette: --Grays;
+    font-variation-settings: "BVEL" 100, "SHDW" 0;
+}
+
+.mibster {
+    font-family: 'Mibster';
+    font-size: 50px;
+    font-palette: --Multi;
+}
+
+/* @font-palette-values --Reem {
+    font-family: reem;
+    base-palette: 0;
+    override-colors:
+        0 lch(56% 132 17),
+        1 lch(76% 132 159.026);
+} */
+
+.reem {
+    font-family: 'reem';
+    font-size: 120px;
+    /* font-palette: --Reem; */
+}
+
+@property --color {
+    syntax: '<color>';
+    initial-value: rgb(0,0,0);
+    inherits: false;
+}
+
+:root {
+    --color: lch(100% 132 332);
+    --color: rgb(0,0,0);
+}
+
+@keyframes changeColor {
+    0% {
+       --color: rgb(0,0,0);
+    }
+    100% {
+        --color: rgb(255,255,255);
+    }
+}
+
+.animate-bg {
+    background-color: var(--color);
+    animation: changeColor 5s alternate infinite;
+}
     </style>
 </head>
 <body>
@@ -197,14 +330,27 @@ h2 {
    </div>
 
    <div class="container">
+    
     <h2 class="rocher">Quick brown fox</h2>
+    <h2 class="rocher grays">Quick brown fox</h2>
     <h2 class="rocher pinks">Quick brown fox</h2>
    </div>
 
-   <div style="background-color: rgb(230,230,230);" class="container">
+   <div class="container">
        <h2 class="emoji">🐶✨</h2>
    </div>
 
+   <!-- <div style="background-color: rgb(230,230,230);" class="container">
+    <h2 class="noto">🏞️</h2>
+</div> -->
+
+
     <p style="text-align: center;">Code available on <a href="https://github.com/o-t-w/color-font-palette">GitHub</a>. Be sure to check out the creators of the fonts used on this site: <a href="https://www.harbortype.com/fonts/rocher-color/">Henrique Beier of Harbor Type</a> and <a href="https://djr.com/font-of-the-month-club">David Jonathan Ross</a> </p>
+
+
+    <!-- <div class="container">
+        <h2 class="reem">كوفي ريم</h2>
+    </div> -->
+
 </body>
 </html>
