@@ -42,6 +42,14 @@
 
     <p style="text-align: center;">Code available on <a href="https://github.com/o-t-w/color-font-palette">GitHub</a>. Be sure to check out the creators of the fonts used on this site: <a href="https://www.harbortype.com/fonts/rocher-color/">Henrique Beier of Harbor Type</a> and <a href="https://djr.com/font-of-the-month-club">David Jonathan Ross</a> </p>
 
+<div style="background-image: url(green-jelly.jpeg);" class="container jellyContainer lime">
+    <h2 class="jel">Jelly</h2>
+
+   <div class="buttons">
+    <button class="strawberry-btn">Strawberry</button>
+    <button class="lime-btn">Lime</button>
+   </div>
+</div>
 
  <div class="container">
         <h2 class="reem">كوفي ريم</h2>
@@ -49,5 +57,18 @@
     <p style="margin-top: 48px;">. This is an example of a COLRv1 font, which is currently only supported in Chrome Canary. The typeface is <a href="https://github.com/aliftype/reem-kufi">Reem Kufi</a></p>
     </div>
 
+    <script>
+        const strawberryBtn = document.querySelector('.strawberry-btn');
+        const limeBtn = document.querySelector('.lime-btn');
+        const jellyContainer = document.querySelector('.jellyContainer');
+        strawberryBtn.addEventListener('click', function() {
+            jellyContainer.classList.remove('lime');
+            jellyContainer.classList.add('strawberry');
+        });
+        limeBtn.addEventListener('click', function() {
+            jellyContainer.classList.remove('strawberry');
+            jellyContainer.classList.add('lime');
+        });
+    </script>
 </body>
 </html>

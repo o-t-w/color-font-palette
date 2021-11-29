@@ -310,3 +310,86 @@
   h1, h2, h3, h4, h5 {
       font-weight: normal;
   }
+
+  @font-face {
+    font-family: 'Jel';
+    src: url('SugarshopJellTRAILV01-PinkCOLR.otf') format('opentype-variations');
+}
+
+@font-palette-values --Strawberry {
+    font-family: Jel;
+    base-palette: 0;
+    override-colors: 
+        0 lch(88% 132 353),
+        1 lch(88% 132 353),
+        2 lch(88% 132 353),
+        3 lch(68% 74 360),
+        4 lch(68% 74 360),
+        5 lch(64% 132 349),
+        6 lch(64% 132 349),
+        7 lch(64% 132 349),
+        8 lch(64% 132 349),
+        9 lch(64% 132 349),
+        10 lch(64% 132 349),
+        11 lch(68% 74 360),
+        12 lch(64% 132 349);
+}
+
+@font-palette-values --Lime {
+    font-family: Jel;
+    base-palette: 0;
+    override-colors: 
+        0 lch(81% 132 145),
+        1 lch(81% 132 145),
+        2 lch(81% 132 145),
+        3 lch(81% 132 145),
+        4 lch(56% 82 159),
+        5 lch(40% 82 159),
+        6 lch(40% 102 159),
+        7 lch(40% 102 159),
+        8 lch(40% 102 159),
+        9 lch(40% 102 159),
+        10 lch(56% 102 159),
+        11 lch(76% 132 159),
+        12 lch(56% 102 159);
+}
+
+.jel {
+    font-family: 'Jel';
+    font-size: 190px;
+}
+
+.lime .jel {
+    font-palette: --Lime;
+}
+
+.strawberry {
+    background-blend-mode: difference;
+}
+
+.strawberry .jel {
+    font-palette: --Strawberry;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+button {
+    font-size: 17px;
+    font-family: ui-rounded;
+    padding: 8px 16px;
+    font-weight: 550;
+    border-radius: 3px;
+}
+
+.lime-btn {
+    background-color: lch(76% 132 159);
+    border: solid 1px lch(56% 102 159);
+}
+
+.strawberry-btn {
+    background-color: lch(68% 74 360);
+    border: solid 1px lch(64% 132 349);
+}
