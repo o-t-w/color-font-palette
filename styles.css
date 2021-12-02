@@ -393,3 +393,30 @@ button {
     background-color: lch(68% 74 360);
     border: solid 1px lch(64% 132 349);
 }
+
+@font-face {
+    src: url('BradleyInitialsDJR-Regular.woff2') format("woff2");
+    font-family: "Bradley";
+}
+
+@font-palette-values --Seafoam {
+    base-palette: 5;
+    font-family: Bradley;
+}
+
+.bradley {
+    font-family: 'Bradley';
+    font-size: 150px;
+    font-palette: --Seafoam;
+}
+
+@font-palette-values --SeafoamRemix {
+    base-palette: 5;
+    font-family: Bradley;
+    override-colors:
+        2 hsl(166deg 50% 32%);
+}
+
+.seafoam-remix {
+    font-palette: --SeafoamRemix;
+}
