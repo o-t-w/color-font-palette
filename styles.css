@@ -437,3 +437,23 @@ button {
     float: left;
     margin-right: 2px;
 }
+
+@font-face {
+    font-family: 'MeritBadge';
+    src: url('MeritBadge-VF.woff2') format('woff2-variations');
+}
+
+@font-palette-values --Neon {
+    font-family: MeritBadge;
+    override-colors:
+        0 black,
+        1 rgb(20,20,30),
+        2 lch(76% 132 159);
+}
+
+.merit-badge {
+    font-family: 'MeritBadge';
+    font-size: 75px;
+    font-palette: --Neon;
+    font-variation-settings: 'SANS' 1, 'wght' 480;
+}
