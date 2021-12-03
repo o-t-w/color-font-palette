@@ -420,3 +420,20 @@ button {
 .seafoam-remix {
     font-palette: --SeafoamRemix;
 }
+
+@font-face {
+    font-family: 'Bradleynoncolor';
+    src: url('BradleyDJRVariable-VF.woff2') format('woff2-variations');
+}
+
+.bradley-non-color {
+    font-family: 'Bradleynoncolor';
+    font-size: 40px;
+}
+
+.bradley-non-color::first-letter {
+    font-family: 'Bradley';
+    font-size: 104px;
+    float: left;
+    margin-right: 2px;
+}
